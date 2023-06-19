@@ -16,7 +16,7 @@ public class LojaController {
 	
 	@GetMapping("/listar")
 	public String testProduto(Model model) {
-		
+				
 		
 	List<Produto> listaDeProdutos = new ArrayList<Produto>();
 		
@@ -45,6 +45,14 @@ public class LojaController {
 		model.addAttribute("listaDeProdutos", listaDeProdutos);
 		
 		return "Produtos"; // Retorna nome do template.
+		
+		
+	}
+	
+	@GetMapping("/novo-produto")
+	public String adicionarProduto () {
+		
+		return "novo-prod";
 		
 	}
 }
