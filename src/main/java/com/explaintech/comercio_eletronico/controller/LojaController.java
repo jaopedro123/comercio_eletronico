@@ -44,7 +44,7 @@ public class LojaController {
 		
 		model.addAttribute("listaDeProdutos", listaDeProdutos);
 		
-		return "Produtos"; // Retorna nome do template
+		return "Produtos"; // Retorna nome do template.
 		
 	}
 }
