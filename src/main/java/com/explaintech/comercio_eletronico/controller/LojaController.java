@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.explaintech.comercio_eletronico.model.Produto;
 
 @Controller
-@RequestMapping("/comercio/Produtos")
+@RequestMapping("/comercio/produtos")
 public class LojaController {
 	
 	@GetMapping("/listar")
@@ -27,7 +27,8 @@ public class LojaController {
 		p1.setCodigoDeBarras("1234567er2e2");
 		p1.setId(122);
 		p1.setPreco(6500.00);
-		p1.setDescricao("Tv sansung 8k full hd");
+		p1.setDescricao("Tv Samsung 8k full hd");
+		p1.setCodStatus(false);
 		
 		
 		Produto p2 = new Produto();
@@ -37,6 +38,7 @@ public class LojaController {
 		p2.setId(202);
 		p2.setPreco(4000.00);
 		p2.setDescricao("3 litros");
+		p2.setCodStatus(true);
 		
 		
 		listaDeProdutos.add(p1);
@@ -50,8 +52,10 @@ public class LojaController {
 	}
 	
 	@GetMapping("/novo-produto")
-	public String adicionarProduto () {
+	public String novoProduto (Produto produto, Model model) {
 		
+		
+		model.addAttribute("produto", produto);
 		return "novo-prod";
 		
 	}

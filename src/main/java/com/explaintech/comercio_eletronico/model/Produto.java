@@ -7,7 +7,7 @@ public class Produto {
 	private String codigoDeBarras;
 	private double preco;
 	private String descricao;
-	
+	private boolean codStatus;
 	
 	// public: Acesso liberado para todas as classes
 	
@@ -46,6 +46,12 @@ public class Produto {
 	}
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+	public boolean isCodStatus() {
+		return codStatus;
+	}
+	public void setCodStatus(boolean codStatus) {
+		this.codStatus = codStatus;
 	}
 	
 	
